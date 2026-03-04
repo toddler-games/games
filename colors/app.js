@@ -15,6 +15,22 @@
         { id: 'pink', name: 'Pink', hex: '#f472b6' },
         { id: 'orange', name: 'Orange', hex: '#f97316' },
         { id: 'brown', name: 'Brown', hex: '#A0522D' },
+        { id: 'black', name: 'Black', hex: '#111827' },
+        { id: 'gray', name: 'Gray', hex: '#6b7280' },
+        { id: 'cyan', name: 'Cyan', hex: '#06b6d4' },
+        { id: 'lime', name: 'Lime', hex: '#84cc16' },
+        { id: 'indigo', name: 'Indigo', hex: '#4f46e5' },
+        { id: 'teal', name: 'Teal', hex: '#0d9488' },
+        { id: 'white', name: 'White', hex: '#ffffff' },
+        { id: 'maroon', name: 'Maroon', hex: '#800000' },
+        { id: 'navy', name: 'Navy', hex: '#000080' },
+        { id: 'olive', name: 'Olive', hex: '#808000' },
+        { id: 'silver', name: 'Silver', hex: '#c0c0c0' },
+        { id: 'gold', name: 'Gold', hex: '#ffd700' },
+        { id: 'coral', name: 'Coral', hex: '#ff7f50' },
+        { id: 'salmon', name: 'Salmon', hex: '#fa8072' },
+        { id: 'khaki', name: 'Khaki', hex: '#f0e68c' },
+        { id: 'plum', name: 'Plum', hex: '#dda0dd' },
     ];
 
     // ---- DOM refs ----
