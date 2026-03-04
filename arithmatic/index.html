@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="A fun arithmetic game for toddlers — learn addition and subtraction with colorful animations!">
+  <meta name="theme-color" content="#6C5CE7">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>🧮 Math Fun! — Arithmetic Game for Kids</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Top Bar -->
+    <header id="top-bar">
+      <div class="score-badge" id="score-badge">
+        <span class="score-icon">⭐</span>
+        <span id="score-value">0</span>
+      </div>
+      <div class="streak-badge" id="streak-badge">
+        <span class="streak-icon">🔥</span>
+        <span id="streak-value">0</span>
+      </div>
+    </header>
+
+    <!-- Game Card -->
+    <main id="game-card">
+      <div id="question-area">
+        <div id="question-emoji" aria-hidden="true">🤔</div>
+        <div id="question-text" role="heading" aria-level="1">
+          <span id="num1" class="num">?</span>
+          <span id="operator" class="op">+</span>
+          <span id="num2" class="num">?</span>
+          <span class="eq">=</span>
+          <span class="q-mark">?</span>
+        </div>
+      </div>
+
+      <div id="answers-grid" role="group" aria-label="Choose your answer">
+        <button class="answer-btn" id="ans-0" aria-label="Answer option 1"></button>
+        <button class="answer-btn" id="ans-1" aria-label="Answer option 2"></button>
+        <button class="answer-btn" id="ans-2" aria-label="Answer option 3"></button>
+        <button class="answer-btn" id="ans-3" aria-label="Answer option 4"></button>
+      </div>
+
+      <div id="feedback" aria-live="polite"></div>
+    </main>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
