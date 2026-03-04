@@ -155,6 +155,10 @@
             background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(167, 139, 250, 0.15));
         }
 
+        .game-card-icon.letter {
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.25), rgba(162, 155, 254, 0.15));
+        }
+
         .game-card-icon.coming-soon {
             background: rgba(255, 255, 255, 0.05);
         }
@@ -267,6 +271,10 @@
             animation: fadeUp 0.6s ease-out 0.3s both;
         }
 
+        .game-card:nth-child(4) {
+            animation: fadeUp 0.6s ease-out 0.4s both;
+        }
+
         /* --- Tablet --- */
         @media (min-width: 600px) {
             .hero {
@@ -338,6 +346,16 @@
             <div class="game-card-info">
                 <h2>Shape World <span class="badge badge-live">Play</span></h2>
                 <p>Discover circles, squares, triangles and more.</p>
+            </div>
+            <span class="game-card-arrow">→</span>
+        </a>
+
+        <!-- Letter Match -->
+        <a href="letters/" class="game-card" id="game-letter">
+            <div class="game-card-icon letter">🔤</div>
+            <div class="game-card-info">
+                <h2>Letter Match <span class="badge badge-live">Play</span></h2>
+                <p>Match uppercase letters to their lowercase pairs.</p>
             </div>
             <span class="game-card-arrow">→</span>
         </a>

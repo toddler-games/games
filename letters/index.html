@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="A fun color game for toddlers — learn colors with colorful balloons!">
-    <meta name="theme-color" content="#f472b6">
+    <meta name="description" content="A fun letter matching game for toddlers — match uppercase to lowercase letters!">
+    <meta name="theme-color" content="#6C5CE7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>🎨 Color Quest — Learning Colors for Kids</title>
+    <title>🔤 Letter Match — Learning Letters for Kids</title>
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
     <link rel="apple-touch-icon" href="icon-192.png">
@@ -38,17 +38,17 @@
         <!-- Game Card -->
         <main id="game-card">
             <div id="question-area">
-                <div id="question-emoji" aria-hidden="true">🎨</div>
+                <div id="question-emoji" aria-hidden="true">🔤</div>
                 <div id="question-text" role="heading" aria-level="1">
-                    Find the <span id="color-name">Color</span> Color!
+                    Find the match for </br><span id="letter-display">A</span>
                 </div>
             </div>
 
             <div id="answers-grid" role="group" aria-label="Choose your answer">
-                <button class="answer-btn" id="ans-0" aria-label="Answer option 1">🎈</button>
-                <button class="answer-btn" id="ans-1" aria-label="Answer option 2">🎈</button>
-                <button class="answer-btn" id="ans-2" aria-label="Answer option 3">🎈</button>
-                <button class="answer-btn" id="ans-3" aria-label="Answer option 4">🎈</button>
+                <button class="answer-btn" id="ans-0" aria-label="Answer option 1">a</button>
+                <button class="answer-btn" id="ans-1" aria-label="Answer option 2">b</button>
+                <button class="answer-btn" id="ans-2" aria-label="Answer option 3">c</button>
+                <button class="answer-btn" id="ans-3" aria-label="Answer option 4">d</button>
             </div>
 
             <div id="feedback" aria-live="polite"></div>
