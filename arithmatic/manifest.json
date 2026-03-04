@@ -1,0 +1,24 @@
+{
+  "name": "Math Fun! — Arithmetic Game",
+  "short_name": "Math Fun!",
+  "description": "A fun arithmetic game for toddlers — learn addition and subtraction!",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a1035",
+  "theme_color": "#6C5CE7",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
