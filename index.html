@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fun learning games for toddlers — arithmetic, colors, shapes and more!">
+    <meta name="theme-color" content="#6C5CE7">
+    <title>🎮 Toddler Games — Fun Learning for Kids</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="arithmatic/icon-512.png">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --clr-bg: #0f0a1e;
+            --clr-text: #f1f0f7;
+            --clr-text-muted: #a5a0c0;
+            --clr-card-bg: rgba(255, 255, 255, 0.06);
+            --clr-card-border: rgba(255, 255, 255, 0.1);
+            --clr-primary: #a78bfa;
+            --clr-accent-pink: #f472b6;
+            --clr-accent-cyan: #22d3ee;
+            --font: 'Outfit', system-ui, sans-serif;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--clr-bg);
+            background-image:
+                radial-gradient(ellipse at 30% 20%, rgba(167, 139, 250, 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse at 70% 80%, rgba(244, 114, 182, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(34, 211, 238, 0.06) 0%, transparent 60%);
+            color: var(--clr-text);
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Header --- */
+        .hero {
+            text-align: center;
+            padding: 60px 24px 40px;
+            max-width: 600px;
+        }
+
+        .hero-emoji {
+            font-size: 4rem;
+            margin-bottom: 16px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent-pink), var(--clr-accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--clr-text-muted);
+            line-height: 1.6;
+        }
+
+        /* --- Games Grid --- */
+        .games-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 0 24px 60px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .game-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--clr-card-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--clr-card-border);
+            border-radius: 20px;
+            padding: 24px 28px;
+            text-decoration: none;
+            color: var(--clr-text);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .game-card:hover,
+        .game-card:focus-visible {
+            transform: translateY(-4px) scale(1.02);
+            border-color: rgba(167, 139, 250, 0.3);
+            box-shadow: 0 12px 40px rgba(167, 139, 250, 0.15);
+        }
+
+        .game-card:hover::before {
+            opacity: 1;
+        }
+
+        .game-card:active {
+            transform: scale(0.98);
+        }
+
+        .game-card-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+        }
+
+        .game-card-icon.math {
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(244, 114, 182, 0.15));
+        }
+
+        .game-card-icon.coming-soon {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .game-card-info {
+            flex: 1;
+        }
+
+        .game-card-info h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .game-card-info p {
+            font-size: 0.9rem;
+            color: var(--clr-text-muted);
+            line-height: 1.4;
+        }
+
+        .game-card-arrow {
+            font-size: 1.2rem;
+            color: var(--clr-text-muted);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .game-card:hover .game-card-arrow {
+            transform: translateX(4px);
+            color: var(--clr-primary);
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .badge-live {
+            background: rgba(52, 211, 153, 0.15);
+            color: #34d399;
+        }
+
+        .badge-soon {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--clr-text-muted);
+        }
+
+        .card-disabled {
+            opacity: 0.45;
+            pointer-events: none;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px 24px 40px;
+            color: var(--clr-text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--clr-primary);
+            text-decoration: none;
+        }
+
+        /* --- Animations --- */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            animation: fadeUp 0.6s ease-out;
+        }
+
+        .game-card:nth-child(1) {
+            animation: fadeUp 0.6s ease-out 0.1s both;
+        }
+
+        .game-card:nth-child(2) {
+            animation: fadeUp 0.6s ease-out 0.2s both;
+        }
+
+        .game-card:nth-child(3) {
+            animation: fadeUp 0.6s ease-out 0.3s both;
+        }
+
+        /* --- Tablet --- */
+        @media (min-width: 600px) {
+            .hero {
+                padding-top: 80px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-emoji {
+                font-size: 5rem;
+            }
+
+            .games-grid {
+                gap: 24px;
+            }
+
+            .game-card {
+                padding: 28px 32px;
+            }
+
+            .game-card-icon {
+                font-size: 3.5rem;
+                width: 80px;
+                height: 80px;
+            }
+
+            .game-card-info h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-emoji">🎮</div>
+        <h1>Toddler Games</h1>
+        <p>Fun, colorful learning games designed for little hands and growing minds.</p>
+    </section>
+
+    <section class="games-grid">
+
+        <!-- Math Game -->
+        <a href="arithmatic/" class="game-card" id="game-math">
+            <div class="game-card-icon math">🧮</div>
+            <div class="game-card-info">
+                <h2>Math Fun! <span class="badge badge-live">Play</span></h2>
+                <p>Practice addition & subtraction with numbers 0–10. Confetti included! 🎉</p>
+            </div>
+            <span class="game-card-arrow">→</span>
+        </a>
+
+        <!-- Coming Soon: Colors -->
+        <div class="game-card card-disabled">
+            <div class="game-card-icon coming-soon">🎨</div>
+            <div class="game-card-info">
+                <h2>Color Quest <span class="badge badge-soon">Coming soon</span></h2>
+                <p>Learn colors by matching and sorting fun shapes.</p>
+            </div>
+            <span class="game-card-arrow">→</span>
+        </div>
+
+        <!-- Coming Soon: Shapes -->
+        <div class="game-card card-disabled">
+            <div class="game-card-icon coming-soon">🔷</div>
+            <div class="game-card-info">
+                <h2>Shape World <span class="badge badge-soon">Coming soon</span></h2>
+                <p>Discover circles, squares, triangles and more.</p>
+            </div>
+            <span class="game-card-arrow">→</span>
+        </div>
+
+    </section>
+
+    <footer>
+        Made with ❤️ for little learners
+    </footer>
+
+</body>
+
+</html>
